@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover fashion, electronics, beauty, home and sports products at ZohaHayal.">
+  <title>ZohaHayal | Online Shopping</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">✨ Welcome to ZohaHayal — discover something beautiful today</div>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="logo" href="#home">Zoha<span>Hayal</span><small>SHOP YOUR STYLE</small></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#categories">Categories</a><a href="#products">Shop</a><a href="#about">About</a>
+      </div>
+      <form class="search-box" id="searchForm">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products">
+        <button type="submit">Search</button>
+      </form>
+      <div class="nav-actions">
+        <button id="adminBtn" hidden aria-label="Admin dashboard"><i class="fa-solid fa-gauge-high"></i><span>Admin</span></button>
+        <button id="loginBtn" aria-label="Login"><i class="fa-regular fa-user"></i><span id="userLabel">Login</span></button>
+        <button id="logoutBtn" hidden aria-label="Log out"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></button>
+        <button id="wishlistBtn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i><span>Wishlist</span></button>
+        <button id="cartBtn" class="cart-trigger" aria-label="Shopping cart"><i class="fa-solid fa-bag-shopping"></i><span>Cart</span><b id="cartCount">0</b></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">A LITTLE SOMETHING FOR YOU</span>
+          <h1>Find your next<br><em>favorite thing.</em></h1>
+          <p>Thoughtful finds, everyday essentials and lovely details — all in one place.</p>
+          <a class="primary-btn" href="#products">Explore collection <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="hero-note"><span><i class="fa-solid fa-star"></i></span> Curated picks for your everyday life</div>
+        </div>
+        <div class="hero-art">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85" alt="Elegant fashion collection">
+          <div class="floating-card"><strong>New season</strong><span>Fresh finds are here</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits container" id="about">
+      <div><i class="fa-solid fa-truck-fast"></i><span><strong>Fast delivery</strong><small>Across Morocco</small></span></div>
+      <div><i class="fa-solid fa-shield-heart"></i><span><strong>Carefully selected</strong><small>Quality-first picks</small></span></div>
+      <div><i class="fa-solid fa-headset"></i><span><strong>Friendly support</strong><small>Here to help you</small></span></div>
+      <div><i class="fa-solid fa-gift"></i><span><strong>Lovely finds</strong><small>For every day</small></span></div>
+    </section>
+
+    <section class="section container" id="categories">
+      <div class="section-heading">
+        <div><span class="eyebrow">BROWSE YOUR WAY</span><h2>Shop by category</h2></div>
+        <a class="text-link" href="#products">View all products <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="category-grid">
+        <button class="category-card fashion" data-category-jump="Fashion"><span>01</span><strong>Fashion</strong><small>Everyday style</small></button>
+        <button class="category-card electronics" data-category-jump="Electronics"><span>02</span><strong>Electronics</strong><small>Smart essentials</small></button>
+        <button class="category-card beauty" data-category-jump="Beauty"><span>03</span><strong>Beauty</strong><small>Little rituals</small></button>
+        <button class="category-card home" data-category-jump="Home"><span>04</span><strong>Home</strong><small>Make it yours</small></button>
+        <button class="category-card sports" data-category-jump="Sports"><span>05</span><strong>Sports</strong><small>Move with joy</small></button>
+      </div>
+    </section>
+
+    <section class="promo container">
+      <div><span class="eyebrow">THE LITTLE THINGS MATTER</span><h2>Good finds.<br>Good feelings.</h2><p>Explore a collection made for your everyday moments.</p><a href="#products" class="light-btn">Shop now <i class="fa-solid fa-arrow-right"></i></a></div>
+      <div class="promo-decoration"><i class="fa-solid fa-heart"></i><span>Made to<br>make you smile</span></div>
+    </section>
+
+    <section class="section container" id="products">
+      <div class="section-heading products-heading">
+        <div><span class="eyebrow">OUR SELECTION</span><h2>Discover our products</h2><p>Find something you’ll love.</p></div>
+        <select id="sortSelect" aria-label="Sort products">
+          <option value="default">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="rating">Top Rated</option>
+        </select>
+      </div>
+      <div class="filter-buttons" id="filterButtons">
+        <button class="filter-btn active" data-category="All">All</button>
+        <button class="filter-btn" data-category="Fashion">Fashion</button>
+        <button class="filter-btn" data-category="Electronics">Electronics</button>
+        <button class="filter-btn" data-category="Beauty">Beauty</button>
+        <button class="filter-btn" data-category="Home">Home</button>
+        <button class="filter-btn" data-category="Sports">Sports</button>
+      </div>
+      <div class="products-meta"><span id="resultsCount">Showing products</span><button id="clearSearch" class="clear-search" hidden>Clear search ×</button></div>
+      <div class="products-grid" id="productsContainer"></div>
+      <p id="noResults" class="no-results" hidden>No products found. Try another search.</p>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <div><span class="eyebrow">A NOTE FROM US</span><h2>Good things in your inbox.</h2><p>Subscribe for updates and new arrivals.</p></div>
+        <form id="newsletterForm"><input type="email" id="newsletterEmail" placeholder="Your email address" required><button type="submit">Subscribe <i class="fa-solid fa-arrow-right"></i></button></form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><a class="logo" href="#home">Zoha<span>Hayal</span><small>SHOP YOUR STYLE</small></a><p>A happy place for thoughtful finds and everyday favorites.</p><div class="socials"><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a><a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+      <div><h3>Explore</h3><a href="#home">Home</a><a href="#categories">Categories</a><a href="#products">Shop</a></div>
+      <div><h3>Customer care</h3><a href="#about">About us</a><a href="mailto:hello@zohahayal.example">Contact</a><a href="#about">Delivery information</a></div>
+      <div><h3>Stay connected</h3><p>Have a question? We’d love to hear from you.</p><a href="mailto:hello@zohahayal.example">hello@zohahayal.example</a></div>
+    </div>
+    <div class="container copyright">© 2026 ZohaHayal. Made with <i class="fa-solid fa-heart"></i> for you.</div>
+  </footer>
+
+  <!-- Login / Register modal -->
+  <div class="modal-overlay" id="authModal" hidden>
+    <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="close-modal" id="closeAuth" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <span class="eyebrow">WELCOME TO ZOHAHAYAL</span><h2 id="authTitle">Welcome back!</h2><p id="authDescription">Login to your account.</p>
+      <div class="auth-tabs"><button class="auth-tab active" id="showLogin">Login</button><button class="auth-tab" id="showRegister">Register</button></div>
+      <form id="authForm">
+        <div id="nameField" hidden><label for="fullName">Full name</label><input type="text" id="fullName" placeholder="Your full name"></div>
+        <label for="authEmail">Email address</label><input type="email" id="authEmail" placeholder="name@example.com" required>
+        <label for="authPassword">Password</label><input type="password" id="authPassword" placeholder="At least 6 characters" minlength="6" required>
+        <button type="submit" class="auth-submit" id="authSubmit">Login</button>
+      </form>
+      <p id="authMessage" class="auth-message" aria-live="polite"></p>
+      <small class="demo-warning">Demo only: this form does not create a secure account or store passwords.</small>
+    </div>
+  </div>
+
+  <!-- Shopping cart drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart">
+    <div class="cart-header"><h2><i class="fa-solid fa-bag-shopping"></i> My cart</h2><button id="closeCart" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button></div>
+    <div id="cartItems" class="cart-items"><p class="empty-cart">Your cart is empty.</p></div>
+    <div class="cart-footer"><div class="cart-total"><span>Total</span><strong id="cartTotal">0 DH</strong></div><button id="checkoutBtn">Proceed to checkout <i class="fa-solid fa-arrow-right"></i></button><small>Checkout is a demo. No payment will be taken.</small></div>
+  </aside>
+  <!-- Product preview -->
+  <div class="modal-overlay" id="previewModal" hidden>
+    <div class="preview-modal" role="dialog" aria-modal="true"><button class="close-modal" id="closePreview" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><div id="previewBody"></div></div>
+  </div>
+  <!-- Checkout -->
+  <div class="modal-overlay" id="checkoutModal" hidden>
+    <div class="auth-modal" role="dialog" aria-modal="true">
+      <button class="close-modal" id="closeCheckout" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <span class="eyebrow">ALMOST THERE</span><h2>Delivery details</h2><p>Payment is cash on delivery.</p>
+      <form id="checkoutForm">
+        <label for="ckName">Full name</label><input id="ckName" required>
+        <label for="ckPhone">Phone</label><input id="ckPhone" type="tel" required>
+        <label for="ckCity">City</label><input id="ckCity" required>
+        <label for="ckAddress">Address</label><input id="ckAddress" required>
+        <button type="submit" class="auth-submit">Place order</button>
+      </form>
+    </div>
+  </div>
+  <!-- Admin dashboard -->
+  <div class="admin-panel" id="adminPanel" hidden></div>
+  <div id="notification" class="notification" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
